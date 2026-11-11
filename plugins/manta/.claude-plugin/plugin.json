@@ -7,6 +7,7 @@
     "url": "https://github.com/manta-eu/manta"
   },
   "homepage": "https://app.hiremanta.com",
+  "privacyPolicyUrl": "https://manta.eu/privacy-cookie-policy",
   "repository": "https://github.com/manta-eu/manta",
   "license": "UNLICENSED",
   "keywords": ["manta", "knowledge-graph", "channel"],
