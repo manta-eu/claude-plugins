@@ -31,12 +31,16 @@ claude --channels plugin:manta@manta
 ```
 
 Anthropic's list holds its own plugins alone, so ours passes only in an organization whose administrator deployed a
-`managed-settings.json` naming it:
+`managed-settings.json` naming it — on macOS in `/Library/Application Support/ClaudeCode/`, on Linux and WSL in
+`/etc/claude-code/`, on Windows in `C:\Program Files\ClaudeCode\`:
 
 ```json
 {
   "channelsEnabled": true,
-  "allowedChannelPlugins": [{ "marketplace": "manta", "plugin": "manta" }]
+  "allowedChannelPlugins": [
+    { "marketplace": "manta", "plugin": "manta" },
+    { "marketplace": "manta", "plugin": "manta-staging" }
+  ]
 }
 ```
 
