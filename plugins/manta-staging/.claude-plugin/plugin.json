@@ -1,0 +1,24 @@
+{
+  "name": "manta-staging",
+  "version": "0.1.0",
+  "description": "Connects Claude Code to staging Manta and pushes staging Manta events into the session.",
+  "author": {
+    "name": "Manta",
+    "url": "https://github.com/manta-eu/manta"
+  },
+  "homepage": "https://staging-app.hiremanta.com",
+  "repository": "https://github.com/manta-eu/manta",
+  "license": "UNLICENSED",
+  "keywords": ["manta", "knowledge-graph", "channel"],
+  "mcpServers": {
+    "manta-staging": {
+      "type": "http",
+      "url": "https://staging-app.hiremanta.com/mcp"
+    }
+  },
+  "channels": [
+    {
+      "server": "manta-staging"
+    }
+  ]
+}

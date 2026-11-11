@@ -1,0 +1,24 @@
+{
+  "name": "manta",
+  "version": "0.1.0",
+  "description": "Connects Claude Code to Manta and pushes Manta events into the session.",
+  "author": {
+    "name": "Manta",
+    "url": "https://github.com/manta-eu/manta"
+  },
+  "homepage": "https://app.hiremanta.com",
+  "repository": "https://github.com/manta-eu/manta",
+  "license": "UNLICENSED",
+  "keywords": ["manta", "knowledge-graph", "channel"],
+  "mcpServers": {
+    "manta": {
+      "type": "http",
+      "url": "https://app.hiremanta.com/mcp"
+    }
+  },
+  "channels": [
+    {
+      "server": "manta"
+    }
+  ]
+}

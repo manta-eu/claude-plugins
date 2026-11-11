@@ -1,0 +1,25 @@
+{
+  "name": "manta",
+  "owner": {
+    "name": "Manta",
+    "url": "https://github.com/manta-eu/manta"
+  },
+  "metadata": {
+    "description": "Manta's own Claude Code plugins.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "manta",
+      "source": "./plugins/manta",
+      "description": "Manta as an MCP server and a Claude Code channel, against production.",
+      "category": "productivity"
+    },
+    {
+      "name": "manta-staging",
+      "source": "./plugins/manta-staging",
+      "description": "Manta as an MCP server and a Claude Code channel, against staging.",
+      "category": "productivity"
+    }
+  ]
+}
