@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://devenv.sh/devenv.schema.json
+# claude-code has an unfree license.
+allowUnfree: true
+inputs:
+  nixpkgs:
+    url: github:cachix/devenv-nixpkgs/rolling
+  git-hooks:
+    url: github:cachix/git-hooks.nix
+    inputs:
+      nixpkgs:
+        follows: nixpkgs

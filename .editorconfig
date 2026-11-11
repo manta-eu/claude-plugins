@@ -1,0 +1,37 @@
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+charset = utf-8
+indent_style = space
+indent_size = 2
+
+[*.{json,yml,yaml,nix}]
+max_line_length = 120
+
+# Markdown prose keeps one paragraph on one line.
+[*.md]
+max_line_length = unset
+# A diff block or a list item can start with an odd number of spaces.
+indent_size = unset
+
+[.github/workflows/*.yml]
+max_line_length = unset
+
+# Binary files.
+[*.png]
+charset = unset
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+indent_style = unset
+indent_size = unset
+
+# devenv generates this file.
+[devenv.lock]
+charset = unset
+end_of_line = unset
+insert_final_newline = unset
+indent_size = unset
