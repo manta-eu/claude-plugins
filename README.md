@@ -78,5 +78,38 @@ claude plugin validate ./plugins/manta
 
 To try a change without publishing it, load the directory directly: `claude --plugin-dir ./plugins/manta`.
 
+The `devenv` shell gives a `claude` of its own. Use it to validate, so the result matches the check on a pull request.
+
+## Development
+
+The `devenv` shell supplies all the tools. If you use `direnv`, the shell starts when you enter the folder.
+
+The shell has two scripts:
+
+- `validate-plugins` runs `claude plugin validate --strict` on the marketplace and on each plugin. It fails if the repository has no plugin.
+- `run-hooks` runs every git hook on every file.
+
+```bash
+devenv shell
+validate-plugins
+run-hooks
+```
+
+The `devenv` shell installs a git pre-commit hook. The hook runs these checks on each commit:
+
+- `claude plugin validate` checks `.claude-plugin/marketplace.json` and each `plugin.json`, and treats warnings as errors.
+- `oxfmt` formats the JSON, YAML, and Markdown files.
+- `check-json` and `check-yaml` check the syntax of JSON and YAML files.
+- `nixfmt` formats the Nix files. `statix` and `deadnix` check them.
+- `actionlint` checks the GitHub workflows.
+- `editorconfig-checker` checks each file against `.editorconfig`.
+- `typos` finds spelling mistakes.
+- `ripsecrets` finds secrets, for example API keys.
+- `check-merge-conflicts` and `check-case-conflicts` find merge markers and file names that differ only in case.
+
+The GitHub workflow runs `run-hooks` on each pull request. A pull request needs a green check and one review from `@manta-eu/development` before a merge.
+
+## Where the server lives
+
 The server these plugins point at lives in [`manta-eu/manta`](https://github.com/manta-eu/manta), under
 `packages/agent-server/src/agents/mcp/`.
